@@ -11,29 +11,36 @@ import { V0_FEED_MODELS, V0_USER_MODELS } from "./controllers/v0/model.index";
 (async () => {
   dotenv.config();
 
-  await sequelize.addModels(V0_FEED_MODELS);
-  await sequelize.addModels(V0_USER_MODELS);
-  await sequelize.sync();
+  sequelize.addModels(V0_FEED_MODELS);
+  sequelize.addModels(V0_USER_MODELS);
 
-  console.log("Database Connected");
+  try {
+    await sequelize.sync();
 
-  const app = express();
-  const port = process.env.PORT || 8080;
+    console.log("Database Connected");
 
-  app.use(bodyParser.json());
+    const app = express();
+    const port = process.env.PORT || 8080;
 
-  app.use(cors());
+    app.use(bodyParser.json());
 
-  app.use("/api/v0/", IndexRouter);
+    app.use(cors());
 
-  // Root URI call
-  app.get("/", async (req, res) => {
-    res.send("/api/v0/");
-  });
+    app.use("/api/v0/", IndexRouter);
 
-  // Start the Server
-  app.listen(port, () => {
-    console.log(`server running ${process.env.URL}`);
-    console.log(`press CTRL+C to stop server`);
-  });
+    // Root URI call
+    app.get("/", async (req, res) => {
+      res.send("/api/v0/");
+    });
+
+    // Start the Server
+    app.listen(port, () => {
+      console.log(`server running ${process.env.URL}`);
+      console.log(`press CTRL+C to stop server`);
+    });
+      
+  } catch (error) {
+    console.log(error);
+  }
+  
 })();
