@@ -32,7 +32,7 @@ jobs:
       - run:
           name: Front-End Install
           command: |
-            cd udagram-api && npm install --force && npm install -g @angular/cli
+            cd udagram-api && npm install
       - run:
           name: Front-End Build
           command: |
