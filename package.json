@@ -6,7 +6,7 @@
   "author": "Ahmed Abdelaal",
   "license": "ISC",
   "scripts": {
-    "backend:install": "cd udagram-api && npm install --force",
+    "backend:install": "cd udagram-api && npm install",
     "backend:build": "cd udagram-api && npm run build",
     "backend:deploy": "cd udagram-api && npm run deploy",
     "frontend:install": "cd udagram-frontend && npm install",
