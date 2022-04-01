@@ -1,1 +1,3 @@
-node_modules
+udagram-api/.gitignore
+udagram-frontend/.gitignore
+.gitignore
