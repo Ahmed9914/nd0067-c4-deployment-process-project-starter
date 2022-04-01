@@ -13,5 +13,7 @@
     "frontend:build": "cd udagram-frontend && npm run build",
     "frontend:deploy": "cd udagram-frontend && npm run deploy"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "typescript": "^3.3.4000"
+  }
 }
