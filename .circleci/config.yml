@@ -25,7 +25,7 @@ jobs:
           name: Back-End Deploy
           command: |
             npm run backend:deploy
-       - run:
+      - run:
           name: Angular CLI Dependencies
           command: |
             npm i -g @angular/cli 
