@@ -9,8 +9,8 @@ jobs:
       - image: "cimg/base:stable"
     steps:
       - checkout
-      - node/install
-        node-version: '14.19.1'
+      - node/install:
+          node-version: '14.15.1'
       - aws-cli/setup
       - eb/setup
       - run:
