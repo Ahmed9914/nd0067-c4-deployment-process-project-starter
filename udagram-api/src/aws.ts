@@ -5,7 +5,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 // Configure AWS
-const credentials = new AWS.Credentials(config.aws_access_key, config.aws_secret, config.aws_token);
+const credentials = new AWS.Credentials(config.aws_access_key, config.aws_secret);
 AWS.config.credentials = credentials;
 
 export const s3 = new AWS.S3({
