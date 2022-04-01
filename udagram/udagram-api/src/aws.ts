@@ -1,8 +1,11 @@
 import AWS = require("aws-sdk");
 import { config } from "./config/config";
 
+import * as dotenv from "dotenv";
+dotenv.config();
+
 // Configure AWS
-const credentials = new AWS.SharedIniFileCredentials({ profile: "default" });
+const credentials = new AWS.Credentials(config.aws_access_key, config.aws_secret, config.aws_token);
 AWS.config.credentials = credentials;
 
 export const s3 = new AWS.S3({
