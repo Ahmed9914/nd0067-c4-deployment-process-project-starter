@@ -1,7 +1,4 @@
 version: 2.1
-dependencies:
-  pre:
-    - curl -s https://raw.githubusercontent.com/chronogolf/circleci-google-chrome/master/use_chrome_stable_version.sh | bash
 orbs:
   node: circleci/node@5.0.0
   aws-cli: circleci/aws-cli@2.0.6
@@ -9,7 +6,7 @@ orbs:
 jobs:
   build-deploy:
     docker:
-      - image: "cimg/node:14.19.1-browsers"
+      - image: "cimg/node:stable"
     steps:
       - checkout
       - node/install:
@@ -28,10 +25,6 @@ jobs:
           name: Front-End Install
           command: |
             npm run frontend:install
-      - run:
-          name: Front-End Test
-          command: |
-            npm run frontend:test
       - run:
           name: Back-End Build
           command: |
