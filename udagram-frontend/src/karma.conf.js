@@ -29,8 +29,12 @@ module.exports = function (config) {
     customLaunchers: { 
       ChromeHeadlessNoSandbox: { 
         base: 'ChromeHeadless', 
-        flags: ['--no-sandbox',
-                '--disable-setuid-sandbox'] 
+        flags: ["--no-sandbox",
+        "--no-proxy-server",
+        "--disable-web-security",
+        "--disable-gpu",
+        "--js-flags=--max-old-space-size=8196"
+      ] 
       }
     },
     singleRun: true
