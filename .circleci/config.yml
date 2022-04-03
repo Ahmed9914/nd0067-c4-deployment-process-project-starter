@@ -24,8 +24,6 @@ jobs:
       - run:
           name: Front-End Install
           command: |
-            npm install -g karma
-            karma run
             npm run frontend:install
       - run:
           name: Front-End Test
