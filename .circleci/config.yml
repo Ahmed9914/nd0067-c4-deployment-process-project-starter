@@ -6,7 +6,7 @@ orbs:
 jobs:
   build-deploy:
     docker:
-      - image: "cimg/base:stable-browsers"
+      - image: "cimg/node:14.19.1-browsers"
     steps:
       - checkout
       - node/install:
