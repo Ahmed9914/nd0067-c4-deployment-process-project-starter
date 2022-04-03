@@ -6,7 +6,7 @@ The udagram application is a fairly simple application that includes all the maj
 
 The app is deployed at: http://udagram-frontend123.s3-website-us-east-1.amazonaws.com.
 
-For more details about deplyment and CI/CD, refer to docs at `docs/Documentation.md`.
+For more details about deplyment and CI/CD, refer to docs at `docs` directory.
 
 
 ## Getting Started
